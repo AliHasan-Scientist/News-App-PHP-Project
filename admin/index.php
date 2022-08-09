@@ -1,3 +1,8 @@
+<?php
+session_start();
+
+?>
+
 <!doctype html>
 <html>
 <head>
@@ -35,7 +40,7 @@
                 if (isset($_POST['login'])) {
                     include_once('db-connection.php');
                     // get the date from table
-
+                    $_SESSION['username'] = $_POST["username"];
 
 //     get the user name and password from user table
                     $get_user_data_query = "SELECT `username` , `password` FROM `user`  ";
